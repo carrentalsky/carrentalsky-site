@@ -151,6 +151,10 @@ a {
   color: #1677FF !important;
 }
 
+#sc-box .sc-field.half.sc-dates label.sc-field-z {
+  color: #000000 !important;
+}
+
 .vipcars-widget-active .select2-drop,
 .vipcars-widget-active .select2-drop *,
 .vipcars-widget-active .calentim-container,
