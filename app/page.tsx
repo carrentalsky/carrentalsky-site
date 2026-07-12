@@ -69,7 +69,7 @@ export default function Home() {
     <PageShell>
       <div className="bg-[#f5f8fc] text-[#111827]">
         <section className="home-hero-surface relative overflow-hidden border-b border-[#d9e3f0]">
-          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-6 sm:px-6 sm:pb-10 sm:pt-8 lg:px-8">
+          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8">
             <div className="max-w-3xl text-left">
               <h1 className="max-w-3xl text-[36px] font-bold leading-[1.08] tracking-[-0.02em] text-[#1267e8] sm:text-[46px] lg:text-[52px]">
                 Compare car rentals worldwide
@@ -79,15 +79,17 @@ export default function Home() {
                 with confidence.
               </p>
             </div>
+          </div>
 
-            <div className="home-booking-panel mt-5 bg-[#0b1f3a]">
-              <div className="h-5 rounded-t-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
-              <div>
-                <VipCarsWidget page="step1" className="w-full" />
-              </div>
-              <div className="h-5 rounded-b-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
+          <div className="home-booking-panel relative z-10 mt-5 w-full bg-[#0b1f3a]">
+            <div className="h-5 rounded-t-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
+            <div>
+              <VipCarsWidget page="step1" className="w-full" />
             </div>
+            <div className="h-5 rounded-b-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
+          </div>
 
+          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 sm:px-6 sm:pb-10 lg:px-8">
             <div className="mt-7 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#eef6ff]/80 p-3 sm:grid-cols-2 lg:grid-cols-4">
               {trustItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-4 rounded-md border border-[#e1ecfb] bg-white px-5 py-4">
