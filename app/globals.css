@@ -50,14 +50,22 @@ a {
 }
 
 .vipcars-widget-shell {
+  background: #111827;
   overflow: visible;
   width: 100%;
 }
 
 .vipcars-widget-shell #bookingengine {
+  background: #111827;
   max-width: 100%;
   overflow: visible;
   width: 100%;
+}
+
+.vipcars-widget-shell #bookingengine #sc-box,
+.vipcars-widget-shell #bookingengine .sc-box,
+.vipcars-widget-shell #bookingengine .sc-form-wrapper {
+  background: #111827 !important;
 }
 
 .vipcars-widget-active .select2-drop,
