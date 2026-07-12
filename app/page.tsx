@@ -68,31 +68,38 @@ export default function Home() {
   return (
     <PageShell>
       <div className="bg-[#f5f8fc] text-[#111827]">
-        <section className="relative overflow-visible border-b border-[#d9e3f0] bg-white">
-          <div className="absolute inset-x-0 top-0 h-1 bg-skybrand-500/90" />
-          <div className="mx-auto max-w-[1600px] px-4 pb-8 pt-8 sm:px-6 sm:pb-10 lg:px-8">
+        <section className="home-hero-surface relative overflow-hidden border-b border-[#d9e3f0]">
+          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="inline-flex rounded-full border border-[#d9e3f0] bg-[#f5f8fc] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-skybrand-500">
-                Global car rental booking
-              </p>
-              <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
-                Find the right car, wherever you&apos;re going
+              <h1 className="mx-auto max-w-4xl text-4xl font-semibold tracking-tight text-[#07142d] sm:text-5xl lg:text-6xl">
+                Find the right car,{" "}
+                <span className="text-[#1267e8]">wherever you&apos;re going</span>
               </h1>
-              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg">
                 Compare car rental options from trusted suppliers and book
                 securely in just a few steps.
               </p>
             </div>
 
-            <div className="mt-6 w-full">
-              <VipCarsWidget page="step1" className="w-full" />
+            <div className="home-booking-panel mt-7 rounded-xl border border-[#0d6efd]/40 bg-[#082653] p-3 shadow-[0_18px_45px_rgba(13,110,253,0.18)] sm:p-4 lg:p-5">
+              <div className="mb-0 inline-flex max-w-full items-center gap-4 rounded-t-lg border border-[#0d6efd]/35 border-b-0 bg-[#0a2b5a] px-5 py-4 text-white sm:min-w-[430px]">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0d6efd] text-white shadow-[0_0_20px_rgba(13,110,253,0.35)]">
+                  <CarFront aria-hidden="true" className="h-6 w-6" />
+                </span>
+                <span className="truncate text-lg font-semibold uppercase tracking-[0.02em] sm:text-2xl">
+                  Search for car rental
+                </span>
+              </div>
+              <div className="rounded-lg border border-[#0d6efd]/25 bg-[#061a36] p-3 sm:p-4 lg:p-5">
+                <VipCarsWidget page="step1" className="w-full" />
+              </div>
             </div>
 
-            <div className="mt-5 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#f5f8fc] p-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-7 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#eef6ff]/80 p-3 sm:grid-cols-2 lg:grid-cols-4">
               {trustItems.map((item) => (
-                <div key={item.label} className="flex items-center gap-3 rounded-md bg-white px-3 py-3">
-                  <item.icon aria-hidden="true" className="h-5 w-5 shrink-0 text-skybrand-500" />
-                  <span className="text-sm font-semibold text-slate-700">{item.label}</span>
+                <div key={item.label} className="flex items-center gap-4 rounded-md border border-[#e1ecfb] bg-white px-5 py-4">
+                  <item.icon aria-hidden="true" className="h-6 w-6 shrink-0 text-[#0d6efd]" />
+                  <span className="text-sm font-semibold text-slate-800 sm:text-base">{item.label}</span>
                 </div>
               ))}
             </div>

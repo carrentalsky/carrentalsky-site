@@ -49,6 +49,48 @@ a {
   backdrop-filter: blur(18px);
 }
 
+.home-hero-surface {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.95), transparent 38rem),
+    linear-gradient(180deg, #f8fbff 0%, #eef6ff 100%);
+}
+
+.home-hero-surface::before,
+.home-hero-surface::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-hero-surface::before {
+  left: -8rem;
+  top: 8rem;
+  width: 34rem;
+  height: 20rem;
+  border-radius: 55% 45% 58% 42%;
+  background: rgba(18, 103, 232, 0.13);
+  transform: rotate(17deg);
+}
+
+.home-hero-surface::after {
+  right: -9rem;
+  top: 6rem;
+  width: 42rem;
+  height: 24rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 70% 35%, rgba(18, 103, 232, 0.1), transparent 52%),
+    linear-gradient(140deg, transparent 0 42%, rgba(18, 103, 232, 0.12) 43% 60%, transparent 61%);
+  transform: rotate(-13deg);
+}
+
+.home-booking-panel .vipcars-widget-shell > p {
+  color: #93a9c8;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
 .vipcars-widget-shell {
   background: #0B1F3A;
   overflow: visible;
