@@ -16,16 +16,16 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e4eaf1] bg-[#ffffff] shadow-sm backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#061a33] shadow-sm backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 sm:px-6 lg:px-8">
-        <Logo priority variant="light" className="w-40 sm:w-48" />
+        <Logo priority variant="dark" className="w-40 sm:w-48" />
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-semibold text-[#071a35] transition hover:bg-slate-100 hover:text-[#071a35] focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40"
+              className="rounded-md px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40"
             >
               {item.label}
             </Link>
@@ -43,7 +43,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#e4eaf1] text-[#071a35] transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40 lg:hidden"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((open) => !open)}
@@ -55,14 +55,14 @@ export function Header() {
       {isOpen ? (
         <nav
           aria-label="Mobile navigation"
-          className="border-t border-[#e4eaf1] bg-white px-5 py-4 shadow-sm lg:hidden"
+          className="border-t border-white/10 bg-[#061a33] px-5 py-4 shadow-sm lg:hidden"
         >
           <div className="mx-auto grid max-w-7xl gap-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-3 text-sm font-semibold text-[#071a35] transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40"
+                className="rounded-md px-3 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#1677ff]/40"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
