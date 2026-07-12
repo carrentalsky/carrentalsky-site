@@ -70,29 +70,22 @@ export default function Home() {
       <div className="bg-[#f5f8fc] text-[#111827]">
         <section className="relative overflow-visible border-b border-[#d9e3f0] bg-white">
           <div className="absolute inset-x-0 top-0 h-1 bg-skybrand-500/90" />
-          <div className="mx-auto max-w-7xl px-5 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
-              <div className="max-w-xl">
-                <p className="inline-flex rounded-full border border-[#d9e3f0] bg-[#f5f8fc] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-skybrand-500">
-                  Global car rental booking
-                </p>
-                <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                  Find the right car, wherever you&apos;re going
-                </h1>
-                <p className="mt-5 text-base leading-7 text-slate-600 sm:text-lg">
-                  Compare car rental options from trusted suppliers and book
-                  securely in just a few steps.
-                </p>
-                <p className="mt-4 max-w-lg text-sm leading-6 text-slate-500">
-                  CarRentalSky provides a car rental search and booking
-                  interface. Reservations are fulfilled by VIP Cars and the
-                  applicable rental supplier.
-                </p>
-              </div>
+          <div className="mx-auto max-w-[1600px] px-4 pb-8 pt-8 sm:px-6 sm:pb-10 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="inline-flex rounded-full border border-[#d9e3f0] bg-[#f5f8fc] px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-skybrand-500">
+                Global car rental booking
+              </p>
+              <h1 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+                Find the right car, wherever you&apos;re going
+              </h1>
+              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+                Compare car rental options from trusted suppliers and book
+                securely in just a few steps.
+              </p>
+            </div>
 
-              <div className="lg:pt-2">
-                <VipCarsWidget page="step1" className="shadow-[0_24px_70px_rgba(17,24,39,0.12)]" />
-              </div>
+            <div className="mt-6 w-full">
+              <VipCarsWidget page="step1" className="w-full shadow-[0_22px_60px_rgba(17,24,39,0.14)]" />
             </div>
 
             <div className="mt-5 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#f5f8fc] p-3 sm:grid-cols-2 lg:grid-cols-4">

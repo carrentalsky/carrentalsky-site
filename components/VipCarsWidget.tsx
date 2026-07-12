@@ -176,6 +176,7 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
 
     const widgetContainer = container;
 
+    document.body.classList.add("vipcars-widget-active");
     widgetContainer.innerHTML = "";
     cleanupVipArtifacts();
 
@@ -239,26 +240,27 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
       observer.disconnect();
       widgetContainer.innerHTML = "";
       cleanupVipArtifacts();
+      document.body.classList.remove("vipcars-widget-active");
     };
   }, [values]);
 
   return (
-    <div className={`vipcars-widget-shell rounded-lg border border-[#d9e3f0] bg-white p-4 sm:p-5 ${className}`}>
+    <div className={`vipcars-widget-shell w-full rounded-lg border border-slate-700 bg-[#111827] p-3 sm:p-4 ${className}`}>
       {status === "loading" ? (
-        <div className="mb-4 rounded-md border border-[#d9e3f0] bg-[#f5f8fc] px-4 py-3 text-sm text-slate-600">
+        <div className="mb-4 rounded-md border border-slate-700 bg-[#1f2937] px-4 py-3 text-sm text-white">
           Loading secure booking engine...
         </div>
       ) : null}
 
       {status === "error" ? (
-        <div className="mb-4 rounded-md border border-skybrand-500/30 bg-skybrand-500/10 px-4 py-3 text-sm text-slate-700">
+        <div className="mb-4 rounded-md border border-skybrand-500/50 bg-skybrand-500/10 px-4 py-3 text-sm text-white">
           The booking engine is taking longer than expected to load. Please refresh
           the page, or try again shortly.
         </div>
       ) : null}
 
-      <div id={widgetDivId} ref={containerRef} className="min-h-24 w-full max-w-full overflow-x-auto" />
-      <p className="mt-3 text-xs leading-5 text-slate-500">
+      <div id={widgetDivId} ref={containerRef} className="min-h-24 w-full max-w-full overflow-visible" />
+      <p className="mt-3 px-1 text-xs leading-5 text-slate-400">
         Reservations are fulfilled by VIP Cars and the applicable rental supplier.
       </p>
     </div>
