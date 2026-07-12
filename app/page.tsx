@@ -81,7 +81,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="home-booking-panel mt-7 rounded-xl border border-[#0d6efd]/40 bg-[#082653] p-3 shadow-[0_18px_45px_rgba(13,110,253,0.18)] sm:p-4 lg:p-5">
+            <div className="home-booking-panel mt-7 rounded-xl bg-[#082653] p-3 shadow-[0_18px_45px_rgba(13,110,253,0.18)] sm:p-4 lg:p-5">
               <div className="mb-0 inline-flex max-w-full items-center gap-4 rounded-t-lg border border-[#0d6efd]/35 border-b-0 bg-[#0a2b5a] px-5 py-4 text-white sm:min-w-[430px]">
                 <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0d6efd] text-white shadow-[0_0_20px_rgba(13,110,253,0.35)]">
                   <CarFront aria-hidden="true" className="h-6 w-6" />
