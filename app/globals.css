@@ -86,9 +86,7 @@ a {
 }
 
 .home-booking-panel .vipcars-widget-shell > p {
-  color: #93a9c8;
-  margin: 1rem 0 0;
-  padding: 0;
+  display: none;
 }
 
 .vipcars-widget-shell {

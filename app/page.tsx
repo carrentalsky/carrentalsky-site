@@ -69,27 +69,19 @@ export default function Home() {
     <PageShell>
       <div className="bg-[#f5f8fc] text-[#111827]">
         <section className="home-hero-surface relative overflow-hidden border-b border-[#d9e3f0]">
-          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="mx-auto max-w-4xl text-4xl font-semibold tracking-tight text-[#07142d] sm:text-5xl lg:text-6xl">
-                Find the right car,{" "}
-                <span className="text-[#1267e8]">wherever you&apos;re going</span>
+          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-7 sm:px-6 sm:pb-10 sm:pt-9 lg:px-8">
+            <div className="max-w-3xl text-left">
+              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-[#07142d] sm:text-5xl lg:text-[52px] lg:leading-[1.05]">
+                Compare car rentals worldwide
               </h1>
-              <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-slate-700 sm:text-lg">
-                Compare car rental options from trusted suppliers and book
-                securely in just a few steps.
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg lg:text-xl">
+                Search trusted suppliers, compare available vehicles, and book
+                with confidence.
               </p>
             </div>
 
-            <div className="home-booking-panel mt-7 rounded-xl bg-[#082653] p-3 sm:p-4 lg:p-5">
-              <div className="mb-0 inline-flex max-w-full items-center gap-4 rounded-t-lg bg-[#0a2b5a] px-5 py-4 text-white sm:min-w-[430px]">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0d6efd] text-white shadow-[0_0_20px_rgba(13,110,253,0.35)]">
-                  <CarFront aria-hidden="true" className="h-6 w-6" />
-                </span>
-                <span className="truncate text-lg font-semibold uppercase tracking-[0.02em] sm:text-2xl">
-                  Search for car rental
-                </span>
-              </div>
+            <div className="home-booking-panel mt-6 rounded-xl bg-[#082653] p-3 sm:p-4 lg:p-5">
+              <div className="h-5 rounded-t-lg bg-[#0a2b5a] sm:h-6" aria-hidden="true" />
               <div>
                 <VipCarsWidget page="step1" className="w-full" />
               </div>
