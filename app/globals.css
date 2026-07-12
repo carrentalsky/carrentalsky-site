@@ -50,13 +50,13 @@ a {
 }
 
 .vipcars-widget-shell {
-  background: #111827;
-  color: #ffffff;
+  background: #f8fafc;
+  color: #111827;
   overflow: visible;
 }
 
 .vipcars-widget-shell #bookingengine {
-  color: #ffffff;
+  color: #111827;
   overflow: visible;
   padding: 0;
   width: 100%;
@@ -74,9 +74,9 @@ a {
 .vipcars-widget-shell #bookingengine .search-box,
 .vipcars-widget-shell #bookingengine .be_container,
 .vipcars-widget-shell #bookingengine .be_container-fluid {
-  background: #111827 !important;
-  border-color: #1f2937 !important;
-  color: #ffffff;
+  background: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #111827;
   width: 100%;
 }
 
@@ -115,7 +115,7 @@ a {
 .vipcars-widget-shell #bookingengine select,
 .vipcars-widget-shell #bookingengine textarea {
   background: #ffffff !important;
-  border: 1px solid #d9e3f0 !important;
+  border: 1px solid #cbd5e1 !important;
   max-width: 100%;
   border-radius: 8px;
   color: #111827 !important;
@@ -129,8 +129,8 @@ a {
 .vipcars-widget-shell #bookingengine input:focus,
 .vipcars-widget-shell #bookingengine select:focus,
 .vipcars-widget-shell #bookingengine textarea:focus {
-  border-color: #378add !important;
-  box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.28) !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.22) !important;
   outline: none;
 }
 
@@ -138,7 +138,7 @@ a {
 .vipcars-widget-shell #bookingengine .be_control-label,
 .vipcars-widget-shell #bookingengine .control-label,
 .vipcars-widget-shell #bookingengine .form-label {
-  color: #ffffff !important;
+  color: #111827 !important;
   font-weight: 600;
   line-height: 1.25;
   white-space: normal;
@@ -149,7 +149,7 @@ a {
 .vipcars-widget-shell #bookingengine .select2-choice,
 .vipcars-widget-shell #bookingengine .select2-choices {
   background: #ffffff !important;
-  border-color: #d9e3f0 !important;
+  border-color: #cbd5e1 !important;
   border-radius: 8px;
   color: #111827 !important;
   min-height: 44px;
@@ -163,7 +163,7 @@ a {
 .vipcars-widget-shell #bookingengine .search-box,
 .vipcars-widget-shell #bookingengine .booking-engine,
 .vipcars-widget-shell #bookingengine [class*="form"] {
-  border-color: #1f2937 !important;
+  border-color: #cbd5e1 !important;
 }
 
 .vipcars-widget-shell #bookingengine button,
@@ -172,8 +172,8 @@ a {
 .vipcars-widget-shell #bookingengine .be_btn,
 .vipcars-widget-shell #bookingengine .btn,
 .vipcars-widget-shell #bookingengine a[class*="btn"] {
-  background-color: #378add !important;
-  border-color: #378add !important;
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
   border-radius: 8px;
   color: #ffffff !important;
   font-weight: 700;
@@ -188,14 +188,14 @@ a {
 .vipcars-widget-shell #bookingengine .be_btn:hover,
 .vipcars-widget-shell #bookingengine .btn:hover,
 .vipcars-widget-shell #bookingengine a[class*="btn"]:hover {
-  background-color: #2878c7 !important;
-  border-color: #2878c7 !important;
+  background-color: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
   filter: none;
 }
 
 .vipcars-widget-shell #bookingengine input[type="checkbox"],
 .vipcars-widget-shell #bookingengine input[type="radio"] {
-  accent-color: #378add;
+  accent-color: #2563eb;
   min-height: auto;
   width: auto;
 }
@@ -207,13 +207,13 @@ a {
 .vipcars-widget-shell #bookingengine [class*="yellow"],
 .vipcars-widget-shell #bookingengine [class*="gold"],
 .vipcars-widget-shell #bookingengine [class*="orange"] {
-  background-color: #378add !important;
-  border-color: #378add !important;
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
   color: #ffffff !important;
 }
 
 .vipcars-widget-shell #bookingengine a {
-  color: #76d8ff;
+  color: #2563eb;
 }
 
 .vipcars-widget-shell #supplycars_page_loader {
@@ -235,7 +235,7 @@ a {
 .vipcars-widget-active .select2-drop,
 .vipcars-widget-active .calentim-container,
 .vipcars-widget-active .calentim-container-mobile {
-  border-color: #d9e3f0 !important;
+  border-color: #cbd5e1 !important;
   color: #111827;
   z-index: 9999;
 }
@@ -246,8 +246,8 @@ a {
 .vipcars-widget-active .calentim-day-end,
 .vipcars-widget-active .calentim-apply,
 .vipcars-widget-active [class*="selected"] {
-  background-color: #378add !important;
-  border-color: #378add !important;
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
   color: #ffffff !important;
 }
 

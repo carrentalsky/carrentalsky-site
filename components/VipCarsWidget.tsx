@@ -10,8 +10,8 @@ type VipCarsDefaultValues = {
   page: VipCarsPage;
   div_id: "bookingengine";
   step2Url: string;
-  terms_page: string;
-  privacy_page: string;
+  terms_page?: string;
+  privacy_page?: string;
   manage_booking_page?: string;
   formType?: string;
   language?: string;
@@ -29,28 +29,22 @@ declare global {
     default_values?: VipCarsDefaultValues;
     jQuery?: unknown;
     $?: unknown;
+    someObject?: unknown;
   }
 }
 
 const affiliateId = "vip_3363";
-const trackingId = "pHPGL749535178";
+const trackingId = "qGaZk837643178";
 const widgetDivId = "bookingengine";
 const vipScriptUrl = "https://res.supplycars.com/jsbookingengine/script1.js?v=0.04";
-const jqueryUrl = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+const jqueryUrl = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js";
+const searchUrl = "https://www.carrentalsky.com/search";
+const manageBookingUrl = "https://www.carrentalsky.com/manage-booking";
+const termsUrl = "https://www.carrentalsky.com/terms-and-conditions";
 
 let jqueryPromise: Promise<void> | null = null;
-let activeBootstrapScript: HTMLScriptElement | null = null;
-
-function getPublicSiteUrl() {
-  if (
-    typeof window !== "undefined" &&
-    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
-  ) {
-    return window.location.origin;
-  }
-
-  return (process.env.NEXT_PUBLIC_SITE_URL || "https://www.carrentalsky.com").replace(/\/$/, "");
-}
+let activeWidgetToken: symbol | null = null;
+let vipBootstrapScript: HTMLScriptElement | null = null;
 
 function loadScriptOnce(src: string, id: string) {
   if (typeof window === "undefined") {
@@ -107,28 +101,21 @@ function hasLoadedWidgetContent(container: HTMLElement) {
 }
 
 function createDefaultValues(page: VipCarsPage): VipCarsDefaultValues {
-  const siteUrl = getPublicSiteUrl();
-  const common = {
-    affiliate_id: affiliateId,
-    aff_tid: trackingId,
-    page,
-    terms_page: `${siteUrl}/terms-and-conditions`,
-    privacy_page: `${siteUrl}/privacy-policy`,
-    step2Url: `${siteUrl}/search`,
-    div_id: widgetDivId
-  } satisfies Partial<VipCarsDefaultValues>;
-
   if (page === "step1") {
     return {
-      ...common,
+      affiliate_id: affiliateId,
+      aff_tid: trackingId,
       page,
+      step2Url: searchUrl,
+      terms_page: termsUrl,
       formType: "form6",
       language: "en",
       currency: "",
-      show_multilingual: "1",
+      show_multilingual: "0",
       pickup_country: "",
       pickup_city: "",
       pickup_loc: "",
+      privacy_page: "",
       unsubscribe_page: "",
       div_id: widgetDivId
     };
@@ -136,22 +123,49 @@ function createDefaultValues(page: VipCarsPage): VipCarsDefaultValues {
 
   if (page === "step2") {
     return {
-      ...common,
+      affiliate_id: affiliateId,
+      aff_tid: trackingId,
       page,
-      manage_booking_page: `${siteUrl}/manage-booking`,
+      manage_booking_page: manageBookingUrl,
       hide_insurance: "0",
+      step2Url: searchUrl,
       div_id: widgetDivId
     };
   }
 
   return {
-    ...common,
+    affiliate_id: affiliateId,
+    aff_tid: trackingId,
     page,
     language: "en",
     show_multilingual: "0",
-    manage_booking_page: `${siteUrl}/manage-booking`,
+    manage_booking_page: manageBookingUrl,
+    terms_page: termsUrl,
+    step2Url: searchUrl,
     div_id: widgetDivId
   };
+}
+
+function runVipBootstrap(values: VipCarsDefaultValues) {
+  window.default_values = values;
+  delete window.someObject;
+
+  if (vipBootstrapScript) {
+    vipBootstrapScript.remove();
+    vipBootstrapScript = null;
+  }
+
+  return new Promise<void>((resolve, reject) => {
+    const script = document.createElement("script");
+    script.id = "carrentalsky-vipcars-bootstrap";
+    script.src = `${vipScriptUrl}&_=${Date.now()}`;
+    script.async = true;
+    script.dataset.vipcarsBootstrap = "true";
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error(`Unable to load ${vipScriptUrl}`));
+    vipBootstrapScript = script;
+    document.body.appendChild(script);
+  });
 }
 
 type VipCarsWidgetProps = {
@@ -167,6 +181,7 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
   useEffect(() => {
     let cancelled = false;
     const container = containerRef.current;
+    const token = Symbol(page);
     setStatus("loading");
 
     if (!container) {
@@ -175,6 +190,7 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
     }
 
     const widgetContainer = container;
+    activeWidgetToken = token;
 
     document.body.classList.add("vipcars-widget-active");
     widgetContainer.innerHTML = "";
@@ -202,30 +218,13 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
           return;
         }
 
-        window.default_values = values;
+        await runVipBootstrap(values);
 
-        if (activeBootstrapScript) {
-          activeBootstrapScript.remove();
-          activeBootstrapScript = null;
+        if (!cancelled && hasLoadedWidgetContent(widgetContainer)) {
+          setStatus("ready");
         }
-
-        const script = document.createElement("script");
-        script.src = `${vipScriptUrl}&_=${Date.now()}`;
-        script.async = true;
-        script.dataset.vipcarsBootstrap = "true";
-        script.onload = () => {
-          if (!cancelled && hasLoadedWidgetContent(widgetContainer)) {
-            setStatus("ready");
-          }
-        };
-        script.onerror = () => {
-          if (!cancelled) {
-            setStatus("error");
-          }
-        };
-        activeBootstrapScript = script;
-        document.body.appendChild(script);
-      } catch {
+      } catch (error) {
+        console.error(error);
         if (!cancelled) {
           setStatus("error");
         }
@@ -238,29 +237,32 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
       cancelled = true;
       window.clearTimeout(timeout);
       observer.disconnect();
-      widgetContainer.innerHTML = "";
-      cleanupVipArtifacts();
-      document.body.classList.remove("vipcars-widget-active");
+      if (activeWidgetToken === token) {
+        activeWidgetToken = null;
+        widgetContainer.innerHTML = "";
+        cleanupVipArtifacts();
+        document.body.classList.remove("vipcars-widget-active");
+      }
     };
   }, [values]);
 
   return (
-    <div className={`vipcars-widget-shell w-full rounded-lg border border-slate-700 bg-[#111827] p-3 sm:p-4 ${className}`}>
+    <div className={`vipcars-widget-shell w-full rounded-lg border border-slate-200 bg-[#f8fafc] p-3 sm:p-4 ${className}`}>
       {status === "loading" ? (
-        <div className="mb-4 rounded-md border border-slate-700 bg-[#1f2937] px-4 py-3 text-sm text-white">
+        <div className="mb-4 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
           Loading secure booking engine...
         </div>
       ) : null}
 
       {status === "error" ? (
-        <div className="mb-4 rounded-md border border-skybrand-500/50 bg-skybrand-500/10 px-4 py-3 text-sm text-white">
+        <div className="mb-4 rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-slate-700">
           The booking engine is taking longer than expected to load. Please refresh
           the page, or try again shortly.
         </div>
       ) : null}
 
       <div id={widgetDivId} ref={containerRef} className="min-h-24 w-full max-w-full overflow-visible" />
-      <p className="mt-3 px-1 text-xs leading-5 text-slate-400">
+      <p className="mt-3 px-1 text-xs leading-5 text-slate-500">
         Reservations are fulfilled by VIP Cars and the applicable rental supplier.
       </p>
     </div>
