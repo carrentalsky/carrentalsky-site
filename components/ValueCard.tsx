@@ -22,7 +22,7 @@ export function ValueCard({ icon: Icon, title, description, tone = "dark" }: Val
         className={
           isLight
             ? "flex h-11 w-11 items-center justify-center rounded-md bg-skybrand-500/10 text-skybrand-500"
-            : "flex h-11 w-11 items-center justify-center rounded-md bg-[#1677ff]/10 text-[#1677ff]"
+            : "flex h-11 w-11 items-center justify-center rounded-md bg-[#1677ff]/[0.16] text-[#1677ff]"
         }
       >
         <Icon aria-hidden="true" className="h-5 w-5" />

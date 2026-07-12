@@ -51,7 +51,8 @@ a {
 
 .home-hero-surface {
   background:
-    radial-gradient(circle at 50% 0%, rgba(22, 119, 255, 0.2), transparent 38rem),
+    radial-gradient(circle at 62% 14%, rgba(22, 119, 255, 0.22), transparent 32rem),
+    radial-gradient(circle at 8% 80%, rgba(13, 76, 143, 0.22), transparent 30rem),
     linear-gradient(180deg, #061a33 0%, #061a33 100%);
 }
 
@@ -64,25 +65,29 @@ a {
 }
 
 .home-hero-surface::before {
-  left: -8rem;
-  top: 8rem;
-  width: 34rem;
-  height: 20rem;
-  border-radius: 55% 45% 58% 42%;
-  background: rgba(22, 119, 255, 0.14);
-  transform: rotate(17deg);
-}
-
-.home-hero-surface::after {
-  right: -9rem;
-  top: 6rem;
-  width: 42rem;
+  left: -10rem;
+  bottom: 2rem;
+  width: 54rem;
   height: 24rem;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 70% 35%, rgba(22, 119, 255, 0.14), transparent 52%),
-    linear-gradient(140deg, transparent 0 42%, rgba(22, 119, 255, 0.16) 43% 60%, transparent 61%);
-  transform: rotate(-13deg);
+    repeating-radial-gradient(ellipse at 24% 68%, transparent 0 2.1rem, rgba(22, 119, 255, 0.16) 2.16rem 2.24rem, transparent 2.3rem 4.8rem),
+    radial-gradient(circle at 35% 55%, rgba(22, 119, 255, 0.12), transparent 48%);
+  opacity: 0.82;
+  transform: rotate(-8deg);
+}
+
+.home-hero-surface::after {
+  right: -5rem;
+  top: 5rem;
+  width: 36rem;
+  height: 22rem;
+  background:
+    radial-gradient(circle, rgba(22, 119, 255, 0.7) 0 1px, transparent 1.4px);
+  background-size: 18px 18px;
+  border-radius: 52% 48% 54% 46%;
+  opacity: 0.13;
+  mask-image: radial-gradient(ellipse at 58% 42%, #000 0 58%, transparent 78%);
 }
 
 .home-booking-panel .vipcars-widget-shell > p {
@@ -124,12 +129,14 @@ a {
 #sc-box .sc-field select,
 .sc-aff-base #sc-box .sc-field.half .sc-date-field button,
 .drv_age_check #drvAge {
-  border: 1px solid #000000 !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #9FB2C6 !important;
+  color: #000000 !important;
 }
 
 .select-placeholder strong::after,
 .select2-container .select2-selection .select2-selection__rendered::after {
-  border-color: #000000 !important;
+  border-color: #9FB2C6 !important;
 }
 
 #sc-box .subMitBtn input[type="submit"] {

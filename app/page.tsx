@@ -72,7 +72,7 @@ export default function Home() {
           <div className="relative z-10 mx-auto max-w-[1500px] px-4 pt-6 sm:px-6 sm:pt-8 lg:px-8">
             <div className="max-w-3xl text-left">
               <h1 className="max-w-3xl text-[36px] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[46px] lg:text-[52px]">
-                Compare car rentals worldwide
+                Compare car rentals <span className="text-[#1677ff]">worldwide</span>
               </h1>
               <p className="mt-3 max-w-2xl text-base leading-7 text-[#e6eef7] sm:text-lg lg:text-xl">
                 Search trusted suppliers, compare available vehicles, and book
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="mt-7 grid gap-3 rounded-lg border border-[#21496f] bg-[#0b2542]/80 p-3 sm:grid-cols-2 lg:grid-cols-4">
               {trustItems.map((item) => (
                 <div key={item.label} className="flex items-center gap-4 rounded-md border border-[#21496f] bg-[#123253] px-5 py-4">
-                  <item.icon aria-hidden="true" className="h-6 w-6 shrink-0 text-[#1677ff]" />
+                  <item.icon aria-hidden="true" className="h-6 w-6 shrink-0 rounded bg-[#1677ff]/[0.16] p-1 text-[#1677ff]" />
                   <span className="text-sm font-semibold text-white sm:text-base">{item.label}</span>
                 </div>
               ))}
@@ -114,7 +114,7 @@ export default function Home() {
             {steps.map((step, index) => (
               <article key={step.title} className="rounded-lg border border-[#21496f] bg-[#123253] p-6">
                 <div className="flex items-center justify-between gap-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-[#1677ff]/10 text-[#1677ff]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-[#1677ff]/[0.16] text-[#1677ff]">
                     <step.icon aria-hidden="true" className="h-5 w-5" />
                   </div>
                   <span className="text-sm font-semibold text-[#d6e3f0]">0{index + 1}</span>
@@ -145,7 +145,7 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-6 lg:px-8">
           <div className="rounded-lg border border-[#21496f] bg-[#123253] p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
             <div className="flex items-start gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#1677ff]/10 text-[#1677ff]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-[#1677ff]/[0.16] text-[#1677ff]">
                 <CircleDollarSign aria-hidden="true" className="h-5 w-5" />
               </div>
               <div>
