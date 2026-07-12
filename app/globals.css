@@ -49,13 +49,19 @@ a {
   backdrop-filter: blur(18px);
 }
 
-.home-hero-surface {
+.home-dark-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 62% 14%, rgba(22, 119, 255, 0.22), transparent 32rem),
-    radial-gradient(circle at 8% 80%, rgba(13, 76, 143, 0.22), transparent 30rem),
+    radial-gradient(circle at 78% 16%, rgba(22, 119, 255, 0.18), transparent 32rem),
+    radial-gradient(circle at 18% 60%, rgba(13, 76, 143, 0.18), transparent 34rem),
+    radial-gradient(circle at 82% 82%, rgba(8, 41, 79, 0.56), transparent 28rem),
     linear-gradient(180deg, #061a33 0%, #061a33 100%);
 }
 
+.home-dark-surface::before,
+.home-dark-surface::after,
 .home-hero-surface::before,
 .home-hero-surface::after {
   content: "";
@@ -64,17 +70,47 @@ a {
   z-index: 0;
 }
 
-.home-hero-surface::before {
-  left: -10rem;
-  bottom: 2rem;
-  width: 54rem;
-  height: 24rem;
+.home-dark-surface::before {
+  left: -14rem;
+  top: 20rem;
+  width: 72rem;
+  height: 42rem;
   border-radius: 50%;
   background:
-    repeating-radial-gradient(ellipse at 24% 68%, transparent 0 2.1rem, rgba(22, 119, 255, 0.16) 2.16rem 2.24rem, transparent 2.3rem 4.8rem),
-    radial-gradient(circle at 35% 55%, rgba(22, 119, 255, 0.12), transparent 48%);
-  opacity: 0.82;
-  transform: rotate(-8deg);
+    repeating-radial-gradient(ellipse at 30% 58%, transparent 0 2.6rem, rgba(22, 119, 255, 0.14) 2.66rem 2.74rem, transparent 2.82rem 6rem),
+    radial-gradient(circle at 35% 45%, rgba(13, 76, 143, 0.18), transparent 55%);
+  opacity: 0.9;
+  transform: rotate(-9deg);
+}
+
+.home-dark-surface::after {
+  right: -10rem;
+  bottom: -3rem;
+  width: 58rem;
+  height: 24rem;
+  background:
+    linear-gradient(to top, rgba(22, 119, 255, 0.13) 0 18%, transparent 18% 100%),
+    linear-gradient(115deg, transparent 0 8%, rgba(22, 119, 255, 0.1) 8% 9%, transparent 9% 16%, rgba(22, 119, 255, 0.1) 16% 17%, transparent 17% 100%),
+    radial-gradient(circle at 72% 34%, rgba(22, 119, 255, 0.14), transparent 42%);
+  clip-path: polygon(0 70%, 6% 58%, 12% 66%, 19% 46%, 25% 62%, 32% 38%, 39% 62%, 46% 42%, 53% 68%, 60% 48%, 67% 66%, 74% 40%, 81% 62%, 88% 50%, 96% 70%, 100% 70%, 100% 100%, 0 100%);
+  opacity: 0.62;
+}
+
+.home-hero-surface {
+  position: relative;
+}
+
+.home-hero-surface::before {
+  left: -7rem;
+  top: 7rem;
+  width: 38rem;
+  height: 18rem;
+  border-radius: 50%;
+  background:
+    linear-gradient(150deg, transparent 0 42%, rgba(22, 119, 255, 0.18) 43% 45%, transparent 46% 58%, rgba(22, 119, 255, 0.12) 59% 61%, transparent 62%),
+    radial-gradient(circle at 25% 55%, rgba(13, 76, 143, 0.16), transparent 48%);
+  opacity: 0.8;
+  transform: rotate(12deg);
 }
 
 .home-hero-surface::after {
@@ -88,6 +124,11 @@ a {
   border-radius: 52% 48% 54% 46%;
   opacity: 0.13;
   mask-image: radial-gradient(ellipse at 58% 42%, #000 0 58%, transparent 78%);
+}
+
+.home-dark-surface > * {
+  position: relative;
+  z-index: 1;
 }
 
 .home-booking-panel .vipcars-widget-shell > p {
@@ -131,6 +172,7 @@ a {
 .drv_age_check #drvAge {
   background-color: #FFFFFF !important;
   border: 1px solid #9FB2C6 !important;
+  border-radius: 12px !important;
   color: #000000 !important;
 }
 
@@ -142,6 +184,7 @@ a {
 #sc-box .subMitBtn input[type="submit"] {
   background: #1677FF !important;
   border-color: #1677FF !important;
+  border-radius: 14px !important;
   color: #FFFFFF !important;
 }
 
@@ -160,6 +203,29 @@ a {
 
 #sc-box .sc-field.half.sc-dates label.sc-field-z {
   color: #000000 !important;
+}
+
+@media (max-width: 767px) {
+  .home-dark-surface::before {
+    left: -22rem;
+    top: 18rem;
+    opacity: 0.48;
+  }
+
+  .home-dark-surface::after {
+    right: -24rem;
+    opacity: 0.32;
+  }
+
+  .home-hero-surface::before {
+    display: none;
+  }
+
+  .home-hero-surface::after {
+    right: -16rem;
+    top: 7rem;
+    opacity: 0.1;
+  }
 }
 
 .vipcars-widget-active .select2-drop,

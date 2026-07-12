@@ -67,8 +67,8 @@ const values = [
 export default function Home() {
   return (
     <PageShell>
-      <div className="bg-[#061a33] text-white">
-        <section className="home-hero-surface relative overflow-hidden">
+      <div className="home-dark-surface bg-[#061a33] text-white">
+        <section className="home-hero-surface relative z-10">
           <div className="relative z-10 mx-auto max-w-7xl px-5 pt-6 sm:px-6 sm:pt-8 lg:px-8">
             <div className="max-w-3xl text-left">
               <h1 className="max-w-3xl text-[36px] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[46px] lg:text-[52px]">
@@ -83,11 +83,11 @@ export default function Home() {
 
           <div className="home-booking-panel relative z-10 mt-5 bg-[#061a33]">
             <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-              <div className="h-5 rounded-t-xl bg-[#dde7f1] sm:h-6" aria-hidden="true" />
+              <div className="h-3 rounded-t-xl bg-[#dde7f1] sm:h-4" aria-hidden="true" />
               <div>
                 <VipCarsWidget page="step1" className="w-full" />
               </div>
-              <div className="h-5 rounded-b-xl bg-[#dde7f1] sm:h-6" aria-hidden="true" />
+              <div className="h-3 rounded-b-xl bg-[#dde7f1] sm:h-4" aria-hidden="true" />
             </div>
           </div>
 
