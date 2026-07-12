@@ -247,7 +247,7 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
   }, [values]);
 
   return (
-    <div className={`vipcars-widget-shell w-full rounded-lg border border-slate-200 bg-[#f8fafc] p-3 sm:p-4 ${className}`}>
+    <div className={`vipcars-widget-shell w-full overflow-visible ${className}`}>
       {status === "loading" ? (
         <div className="mb-4 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm text-slate-700">
           Loading secure booking engine...

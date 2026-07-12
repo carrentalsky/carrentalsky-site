@@ -85,7 +85,7 @@ export default function Home() {
             </div>
 
             <div className="mt-6 w-full">
-              <VipCarsWidget page="step1" className="w-full shadow-[0_22px_60px_rgba(17,24,39,0.14)]" />
+              <VipCarsWidget page="step1" className="w-full" />
             </div>
 
             <div className="mt-5 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#f5f8fc] p-3 sm:grid-cols-2 lg:grid-cols-4">
