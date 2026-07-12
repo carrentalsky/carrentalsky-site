@@ -69,22 +69,23 @@ export default function Home() {
     <PageShell>
       <div className="bg-[#f5f8fc] text-[#111827]">
         <section className="home-hero-surface relative overflow-hidden border-b border-[#d9e3f0]">
-          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-7 sm:px-6 sm:pb-10 sm:pt-9 lg:px-8">
+          <div className="relative z-10 mx-auto max-w-[1500px] px-4 pb-8 pt-6 sm:px-6 sm:pb-10 sm:pt-8 lg:px-8">
             <div className="max-w-3xl text-left">
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-[#07142d] sm:text-5xl lg:text-[52px] lg:leading-[1.05]">
+              <h1 className="max-w-3xl text-[36px] font-bold leading-[1.08] tracking-[-0.02em] text-[#1267e8] sm:text-[46px] lg:text-[52px]">
                 Compare car rentals worldwide
               </h1>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg lg:text-xl">
+              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg lg:text-xl">
                 Search trusted suppliers, compare available vehicles, and book
                 with confidence.
               </p>
             </div>
 
-            <div className="home-booking-panel mt-6 rounded-xl bg-[#082653] p-3 sm:p-4 lg:p-5">
-              <div className="h-5 rounded-t-lg bg-[#0a2b5a] sm:h-6" aria-hidden="true" />
+            <div className="home-booking-panel mt-5 bg-[#0b1f3a]">
+              <div className="h-5 rounded-t-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
               <div>
                 <VipCarsWidget page="step1" className="w-full" />
               </div>
+              <div className="h-5 rounded-b-xl bg-[#0b1f3a] sm:h-6" aria-hidden="true" />
             </div>
 
             <div className="mt-7 grid gap-3 rounded-lg border border-[#d9e3f0] bg-[#eef6ff]/80 p-3 sm:grid-cols-2 lg:grid-cols-4">
