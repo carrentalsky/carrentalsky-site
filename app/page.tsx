@@ -83,7 +83,7 @@ export default function Home() {
 
           <div className="home-booking-panel relative z-10 mt-5 bg-[#061a33]">
             <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
-              <div className="overflow-hidden rounded-2xl bg-[#dde7f1]">
+              <div className="home-vip-widget-frame overflow-hidden rounded-2xl bg-[#dde7f1]">
                 <VipCarsWidget page="step1" className="w-full" />
               </div>
             </div>

@@ -76,6 +76,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://res.supplycars.com" />
+        <link rel="dns-prefetch" href="//res.supplycars.com" />
+        <link rel="preconnect" href="https://be.supplycars.com" />
+        <link rel="dns-prefetch" href="//be.supplycars.com" />
+      </head>
       <body>{children}</body>
     </html>
   );

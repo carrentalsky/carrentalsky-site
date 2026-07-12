@@ -135,6 +135,10 @@ a {
   display: none;
 }
 
+.home-vip-widget-frame {
+  min-height: 276px;
+}
+
 .vipcars-widget-shell {
   background: #DDE7F1;
   overflow: visible;
@@ -206,6 +210,10 @@ a {
 }
 
 @media (max-width: 767px) {
+  .home-vip-widget-frame {
+    min-height: 550px;
+  }
+
   .home-dark-surface::before {
     left: -22rem;
     top: 18rem;
@@ -225,6 +233,24 @@ a {
     right: -16rem;
     top: 7rem;
     opacity: 0.1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .home-vip-widget-frame {
+    min-height: 431px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1279px) {
+  .home-vip-widget-frame {
+    min-height: 375px;
+  }
+}
+
+@media (max-width: 374px) {
+  .home-vip-widget-frame {
+    min-height: 573px;
   }
 }
 
