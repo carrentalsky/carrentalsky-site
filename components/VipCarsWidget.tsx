@@ -243,30 +243,24 @@ export function VipCarsWidget({ page, className = "" }: VipCarsWidgetProps) {
   }, [values]);
 
   return (
-    <div className={`vipcars-widget-shell glass-panel rounded-lg p-4 sm:p-6 ${className}`}>
-      <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-skybrand-300">
-          Car rental search
-        </p>
-        <p className="text-xs leading-5 text-slate-300">
-          Powered by VIP Cars. Supplier terms may apply.
-        </p>
-      </div>
-
+    <div className={`vipcars-widget-shell rounded-lg border border-[#d9e3f0] bg-white p-4 sm:p-5 ${className}`}>
       {status === "loading" ? (
-        <div className="mb-4 rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+        <div className="mb-4 rounded-md border border-[#d9e3f0] bg-[#f5f8fc] px-4 py-3 text-sm text-slate-600">
           Loading secure booking engine...
         </div>
       ) : null}
 
       {status === "error" ? (
-        <div className="mb-4 rounded-md border border-skybrand-300/30 bg-skybrand-500/10 px-4 py-3 text-sm text-slate-200">
+        <div className="mb-4 rounded-md border border-skybrand-500/30 bg-skybrand-500/10 px-4 py-3 text-sm text-slate-700">
           The booking engine is taking longer than expected to load. Please refresh
           the page, or try again shortly.
         </div>
       ) : null}
 
       <div id={widgetDivId} ref={containerRef} className="min-h-24 w-full max-w-full overflow-x-auto" />
+      <p className="mt-3 text-xs leading-5 text-slate-500">
+        Reservations are fulfilled by VIP Cars and the applicable rental supplier.
+      </p>
     </div>
   );
 }

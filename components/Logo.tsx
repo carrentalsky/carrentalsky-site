@@ -12,7 +12,7 @@ export function Logo({ variant = "dark", priority = false, className = "" }: Log
   const src =
     variant === "dark"
       ? "/logos/car-rental-sky-dark.png"
-      : "/logos/car-rental-sky-light.png";
+      : "/logos/car-rental-sky-light-transparent.png";
 
   return (
     <Link href="/" aria-label={`${brandName} home`} className={`inline-flex ${className}`}>

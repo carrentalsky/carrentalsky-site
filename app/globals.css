@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
@@ -50,13 +50,15 @@ a {
 }
 
 .vipcars-widget-shell {
-  background: #1f2937;
-  color: #ffffff;
-  overflow: hidden;
+  background: #ffffff;
+  color: #111827;
+  overflow: visible;
 }
 
 .vipcars-widget-shell #bookingengine {
-  color: #ffffff;
+  color: #111827;
+  overflow-x: auto;
+  padding: 0;
 }
 
 .vipcars-widget-shell #bookingengine,
@@ -69,6 +71,52 @@ a {
 .vipcars-widget-shell #bookingengine select,
 .vipcars-widget-shell #bookingengine textarea {
   max-width: 100%;
+  border-color: #d9e3f0;
+  border-radius: 8px;
+  color: #111827;
+  font-family: inherit;
+}
+
+.vipcars-widget-shell #bookingengine input:focus,
+.vipcars-widget-shell #bookingengine select:focus,
+.vipcars-widget-shell #bookingengine textarea:focus {
+  border-color: #378add;
+  box-shadow: 0 0 0 3px rgba(55, 138, 221, 0.18);
+  outline: none;
+}
+
+.vipcars-widget-shell #bookingengine label,
+.vipcars-widget-shell #bookingengine .be_control-label,
+.vipcars-widget-shell #bookingengine .control-label,
+.vipcars-widget-shell #bookingengine .form-label {
+  color: #111827;
+  font-weight: 600;
+}
+
+.vipcars-widget-shell #bookingengine .be_form-control,
+.vipcars-widget-shell #bookingengine .form-control,
+.vipcars-widget-shell #bookingengine .select2-choice,
+.vipcars-widget-shell #bookingengine .select2-choices {
+  border-color: #d9e3f0;
+  border-radius: 8px;
+  color: #111827;
+  min-height: 42px;
+}
+
+.vipcars-widget-shell #bookingengine .be_panel,
+.vipcars-widget-shell #bookingengine .be_well,
+.vipcars-widget-shell #bookingengine .be_container,
+.vipcars-widget-shell #bookingengine .be_container-fluid,
+.vipcars-widget-shell #bookingengine .search-box,
+.vipcars-widget-shell #bookingengine .booking-engine,
+.vipcars-widget-shell #bookingengine [class*="form"] {
+  border-color: #d9e3f0;
+}
+
+.vipcars-widget-shell #bookingengine .be_row,
+.vipcars-widget-shell #bookingengine .row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .vipcars-widget-shell #bookingengine button,
@@ -77,11 +125,68 @@ a {
 .vipcars-widget-shell #bookingengine .be_btn,
 .vipcars-widget-shell #bookingengine .btn,
 .vipcars-widget-shell #bookingengine a[class*="btn"] {
-  background-color: #378add;
-  border-color: #378add;
-  color: #ffffff;
+  background-color: #378add !important;
+  border-color: #378add !important;
+  border-radius: 8px;
+  color: #ffffff !important;
+  font-weight: 700;
+  min-height: 42px;
+}
+
+.vipcars-widget-shell #bookingengine button:hover,
+.vipcars-widget-shell #bookingengine input[type="button"]:hover,
+.vipcars-widget-shell #bookingengine input[type="submit"]:hover,
+.vipcars-widget-shell #bookingengine .be_btn:hover,
+.vipcars-widget-shell #bookingengine .btn:hover,
+.vipcars-widget-shell #bookingengine a[class*="btn"]:hover {
+  filter: brightness(1.05);
 }
 
 .vipcars-widget-shell #bookingengine a {
-  color: #76d8ff;
+  color: #378add;
+}
+
+.vipcars-widget-shell #supplycars_page_loader {
+  position: static !important;
+  display: flex !important;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.select2-drop,
+.select2-drop *,
+.calentim-container,
+.calentim-container-mobile,
+.calentim-overlay {
+  box-sizing: border-box;
+  max-width: min(100vw, 720px);
+}
+
+@media (max-width: 640px) {
+  .vipcars-widget-shell #bookingengine table,
+  .vipcars-widget-shell #bookingengine tbody,
+  .vipcars-widget-shell #bookingengine tr,
+  .vipcars-widget-shell #bookingengine td {
+    max-width: 100%;
+  }
+
+  .vipcars-widget-shell #bookingengine button,
+  .vipcars-widget-shell #bookingengine input[type="button"],
+  .vipcars-widget-shell #bookingengine input[type="submit"],
+  .vipcars-widget-shell #bookingengine .be_btn,
+  .vipcars-widget-shell #bookingengine .btn,
+  .vipcars-widget-shell #bookingengine a[class*="btn"] {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
