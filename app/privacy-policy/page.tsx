@@ -5,7 +5,7 @@ import { emails, mailto } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy | CarRentalSky",
   description:
-    "Read the CarRentalSky privacy policy for this coming-soon informational website.",
+    "Read the CarRentalSky privacy policy for this white-label car rental booking interface.",
   alternates: {
     canonical: "/privacy-policy"
   }
@@ -25,27 +25,40 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-xl font-semibold text-white">Overview</h2>
             <p className="mt-3">
-              CarRentalSky is currently a coming-soon informational website for a
-              future global car rental discovery and booking platform. This
-              website provides company and partnership information while the
-              platform is being prepared.
+              CarRentalSky provides a car rental discovery and affiliate
+              interface that connects users with a white-label booking engine
+              powered by VIP Cars and applicable rental suppliers.
             </p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white">Information we process</h2>
             <p className="mt-3">
-              CarRentalSky is not currently processing car rental bookings,
-              payments, user accounts, customer rental data, cancellations, or
-              supplier services through this website. If you contact us by email,
-              we may use the information you provide to respond to your enquiry.
+              If you contact CarRentalSky by email, we may use the information
+              you provide to respond to your enquiry. When you use the booking
+              engine, search, booking management tools, or checkout flow, booking
+              and personal information may be processed by VIP Cars, its
+              technology providers, payment providers, and vehicle suppliers as
+              needed to provide search results, reservations, payments,
+              confirmations, booking management, customer support, and supplier
+              services.
+            </p>
+          </section>
+          <section>
+            <h2 className="text-xl font-semibold text-white">Booking and payment data</h2>
+            <p className="mt-3">
+              CarRentalSky does not ask you to send payment card details by
+              email. Payment, reservation, driver, and booking information should
+              be entered only through the booking engine or official booking
+              management flow. Those third-party services may have their own
+              privacy notices and security practices.
             </p>
           </section>
           <section>
             <h2 className="text-xl font-semibold text-white">Email contact</h2>
             <p className="mt-3">
               Users, partners, suppliers, and affiliates may contact us directly
-              by email. Please avoid sending sensitive payment, identity, or
-              booking information because the platform is not yet live.
+              by email. Please avoid sending sensitive payment card details,
+              identity documents, or unnecessary booking data by email.
             </p>
           </section>
           <section>

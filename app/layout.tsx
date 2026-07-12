@@ -7,7 +7,7 @@ const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "CarRentalSky | Global Car Rental Booking Platform Coming Soon",
+  title: "CarRentalSky | Global Car Rental Booking Platform",
   description: siteDescription,
   applicationName: brandName,
   alternates: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent"
   },
   openGraph: {
-    title: "CarRentalSky | Global Car Rental Booking Platform Coming Soon",
+    title: "CarRentalSky | Global Car Rental Booking Platform",
     description: siteDescription,
     url: siteUrl,
     siteName: brandName,
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CarRentalSky | Global Car Rental Booking Platform Coming Soon",
+    title: "CarRentalSky | Global Car Rental Booking Platform",
     description: siteDescription,
     images: ["/logos/car-rental-sky-dark.png"]
   },

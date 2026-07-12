@@ -3,7 +3,7 @@ import { CTAButton } from "@/components/CTAButton";
 import { Logo } from "@/components/Logo";
 import { PageShell } from "@/components/PageShell";
 import { ValueCard } from "@/components/ValueCard";
-import { emails, mailto } from "@/lib/site";
+import { VipCarsWidget } from "@/components/VipCarsWidget";
 
 const values = [
   {
@@ -42,29 +42,34 @@ export default function Home() {
             <div>
               <Logo priority className="mb-8 w-64 max-w-full sm:w-80" />
               <div className="inline-flex rounded-full border border-skybrand-300/25 bg-skybrand-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-skybrand-300">
-                Coming Soon
+                Global Car Rental Search
               </div>
               <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                Your smarter car rental booking partner is coming soon.
+                Your smarter car rental booking partner.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                CarRentalSky is preparing a trusted global platform to help
-                travelers discover reliable car rental options, compare choices
-                with confidence, and book through the right partners.
+                CarRentalSky helps travelers discover reliable car rental
+                options, compare choices with confidence, and book through a
+                trusted white-label booking engine powered by VIP Cars.
               </p>
               <p className="mt-4 max-w-2xl text-base leading-7 text-slate-400">
-                We are building the foundation for a better car rental discovery
-                and booking experience. Stay tuned.
+                Vehicle availability, pricing, payments, confirmations, and
+                supplier services are handled by VIP Cars and the applicable
+                rental suppliers.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <CTAButton href={mailto(emails.general)}>Contact Us</CTAButton>
-                <CTAButton href={mailto(emails.partnerships)} variant="secondary">
-                  Partner With Us
+                <CTAButton href="/search">Search Rentals</CTAButton>
+                <CTAButton href="/manage-booking" variant="secondary">
+                  Manage Booking
                 </CTAButton>
               </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-6 lg:px-8">
+        <VipCarsWidget page="step1" />
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-6 lg:px-8">

@@ -6,7 +6,7 @@ export const emails = {
 };
 
 export const siteDescription =
-  "CarRentalSky is preparing a trusted global car rental discovery and booking platform for travelers, OTA partners, white-label opportunities, and rental suppliers.";
+  "CarRentalSky helps travelers discover global car rental options through a trusted white-label booking experience powered by VIP Cars and applicable rental suppliers.";
 
 export function getSiteUrl() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://carrentalsky.com";

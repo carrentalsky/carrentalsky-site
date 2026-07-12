@@ -48,3 +48,40 @@ a {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.24);
   backdrop-filter: blur(18px);
 }
+
+.vipcars-widget-shell {
+  background: #1f2937;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.vipcars-widget-shell #bookingengine {
+  color: #ffffff;
+}
+
+.vipcars-widget-shell #bookingengine,
+.vipcars-widget-shell #bookingengine * {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.vipcars-widget-shell #bookingengine input,
+.vipcars-widget-shell #bookingengine select,
+.vipcars-widget-shell #bookingengine textarea {
+  max-width: 100%;
+}
+
+.vipcars-widget-shell #bookingengine button,
+.vipcars-widget-shell #bookingengine input[type="button"],
+.vipcars-widget-shell #bookingengine input[type="submit"],
+.vipcars-widget-shell #bookingengine .be_btn,
+.vipcars-widget-shell #bookingengine .btn,
+.vipcars-widget-shell #bookingengine a[class*="btn"] {
+  background-color: #378add;
+  border-color: #378add;
+  color: #ffffff;
+}
+
+.vipcars-widget-shell #bookingengine a {
+  color: #76d8ff;
+}

@@ -3,9 +3,11 @@ import { Logo } from "@/components/Logo";
 import { emails, mailto } from "@/lib/site";
 
 const footerLinks = [
+  { href: "/search", label: "Search" },
+  { href: "/manage-booking", label: "Manage Booking" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms" }
+  { href: "/terms-and-conditions", label: "Terms and Conditions" }
 ];
 
 export function Footer() {
@@ -15,8 +17,8 @@ export function Footer() {
         <div className="max-w-xl">
           <Logo className="w-48" />
           <p className="mt-5 text-sm leading-6 text-slate-300">
-            CarRentalSky is preparing a trusted global platform for car rental
-            discovery, comparison, and partner-led booking opportunities.
+            CarRentalSky provides a trusted car rental discovery and booking
+            interface powered by VIP Cars and applicable rental suppliers.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:justify-self-end">
