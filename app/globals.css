@@ -50,22 +50,65 @@ a {
 }
 
 .vipcars-widget-shell {
-  background: #111827;
+  background: #0B1F3A;
   overflow: visible;
   width: 100%;
 }
 
 .vipcars-widget-shell #bookingengine {
-  background: #111827;
+  background: #0B1F3A;
   max-width: 100%;
   overflow: visible;
   width: 100%;
 }
 
-.vipcars-widget-shell #bookingengine #sc-box,
-.vipcars-widget-shell #bookingengine .sc-box,
-.vipcars-widget-shell #bookingengine .sc-form-wrapper {
-  background: #111827 !important;
+#sc-box .sc-form-heading {
+  display: none !important;
+}
+
+#sc-box .sc-form-heading,
+#sc-box .sc-field-wrapper {
+  background-color: #0B1F3A !important;
+}
+
+#sc-box .sc-form-heading,
+#sc-box .locLabel,
+#sc-box .sc-field.formToggleInc > span,
+#sc-box .sc-field.half.sc-location > span,
+#sc-box .form_misc label,
+#sc-box .sc-form-wrapper .drv_age_check label {
+  color: #FFFFFF !important;
+}
+
+#sc-box .sc-field input[type="text"],
+#sc-box .sc-field select,
+.sc-aff-base #sc-box .sc-field.half .sc-date-field button,
+.drv_age_check #drvAge {
+  border: 1px solid #FFFFFF !important;
+}
+
+.select-placeholder strong::after,
+.select2-container .select2-selection .select2-selection__rendered::after {
+  border-color: #FFFFFF !important;
+}
+
+#sc-box .subMitBtn input[type="submit"] {
+  background: #0D6EFD !important;
+  border-color: #0D6EFD !important;
+  color: #FFFFFF !important;
+}
+
+.switch-android .sc-switch {
+  background-color: #0D6EFD !important;
+}
+
+#sc-box .sc-form-wrapper .sc-cust-checkbox + label::after {
+  border-color: #0D6EFD !important;
+}
+
+.select-placeholder strong,
+.select2-container .select2-selection .select2-selection__rendered {
+  color: #0D6EFD !important;
 }
 
 .vipcars-widget-active .select2-drop,
