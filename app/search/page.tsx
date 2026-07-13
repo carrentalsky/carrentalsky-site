@@ -18,8 +18,10 @@ export const metadata: Metadata = {
 export default function SearchPage() {
   return (
     <PageShell>
-      <section className="w-full overflow-visible bg-[#061a33] py-3 sm:py-4">
-        <VipCarsWidget page="step2" />
+      <section className="search-results-surface w-full overflow-visible bg-[#061a33] py-3 sm:py-4">
+        <div className="search-results-shell">
+          <VipCarsWidget page="step2" />
+        </div>
       </section>
     </PageShell>
   );

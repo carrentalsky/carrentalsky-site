@@ -4,6 +4,7 @@
 
 :root {
   color-scheme: light;
+  --site-header-height: 81px;
 }
 
 * {
@@ -152,6 +153,23 @@ a {
   width: 100%;
 }
 
+.search-results-shell {
+  min-height: calc(100svh - var(--site-header-height));
+  background: #DDE7F1;
+  overflow: visible;
+  width: 100%;
+}
+
+@supports not (height: 100svh) {
+  .search-results-shell {
+    min-height: calc(100vh - var(--site-header-height));
+  }
+}
+
+.search-results-shell .vipcars-widget-shell > p {
+  display: none;
+}
+
 #sc-box .sc-form-heading {
   display: none !important;
 }
@@ -210,6 +228,10 @@ a {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --site-header-height: 72px;
+  }
+
   .home-vip-widget-frame {
     min-height: 550px;
   }
